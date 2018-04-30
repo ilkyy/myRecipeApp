@@ -2,14 +2,14 @@ package com.myspring.recipeproject.bootstrap;
 
 import com.myspring.recipeproject.domain.*;
 import com.myspring.recipeproject.repositories.*;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
-import java.util.Arrays;
-import java.util.HashSet;
 
+@Slf4j
 @Component
 public class BootStrap  implements ApplicationListener<ContextRefreshedEvent>  {
 
@@ -33,6 +33,7 @@ public class BootStrap  implements ApplicationListener<ContextRefreshedEvent>  {
     }
 
     private void initRecipes() {
+        log.debug("init data");
         Recipe recipe = new Recipe();
         recipe.setDescription("recipe Desc");
         recipe.setDirection("recipe Direction");
